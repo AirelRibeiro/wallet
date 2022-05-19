@@ -5,6 +5,8 @@ const GET_CURRENCIES = 'GET_CURRENCIES';
 const ACTION_SAVE_CURRENCIES = 'ACTION_SAVE_CURRENCIES';
 const ACTION_SAVE_EXPENSE = 'ACTION_SAVE_EXPENSE';
 const ACTION_DELETE_EXPENSE = 'ACTION_DELETE_EXPENSE';
+const ACTION_EDIT_EXPENSE = 'ACTION_EDIT_EXPENSE';
+const ACTION_SAVE_EXPENSE_AFTER_EDITING = 'ACTION_SAVE_EXPENSE_AFTER_EDITING';
 
 const actionLogin = (email) => ({
   type: ACTION_LOGIN,
@@ -36,6 +38,13 @@ const actionDeleteExpense = (expenses) => ({
   expenses,
 });
 
+const actionEditExpense = (id) => ({ type: ACTION_EDIT_EXPENSE, idForEdit: id });
+
+const actionSaveExpenseAfterEditing = (expenses) => ({
+  type: ACTION_SAVE_EXPENSE_AFTER_EDITING,
+  expenses,
+});
+
 export {
   actionLogin,
   ACTION_LOGIN,
@@ -47,4 +56,8 @@ export {
   ACTION_SAVE_EXPENSE,
   actionDeleteExpense,
   ACTION_DELETE_EXPENSE,
+  actionEditExpense,
+  ACTION_EDIT_EXPENSE,
+  actionSaveExpenseAfterEditing,
+  ACTION_SAVE_EXPENSE_AFTER_EDITING,
 };
