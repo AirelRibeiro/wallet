@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchCurrencies } from '../actions';
+import { fetchCurrencies, actionDeleteExpense } from '../actions';
 import ExpenseForm from '../components/ExpenseForm';
 import ExpenseTable from '../components/ExpenseTable';
 
@@ -11,16 +11,30 @@ class Wallet extends React.Component {
   }
 
   componentDidMount() {
-    const { saveCurrencies } = this.props;
+    const { saveCurrencies, expenses } = this.props;
     saveCurrencies();
+    this.totalSum(expenses);
   }
 
   totalSum = (expenses) => {
     const convertedArray = expenses
-      .map(({ value, cotacao }) => Number(value) * Number(cotacao));
-    const sum = convertedArray.reduce((acc, curr) => acc + curr);
+      .map(({ value, currency, exchangeRates }) => Number(value) * (
+        Number(exchangeRates[currency].ask)));
+    const sum = convertedArray.length === 0
+      ? 0 : convertedArray.reduce((acc, curr) => acc + curr);
+    // const sum = convertedArray.reduce((acc, curr) => acc + curr);
+    this.setState({ totalField: sum });
+  }
+
+  deletExpense = (idToDelete, currency, value) => {
+    const { expenses, deleteExpense } = this.props;
+    const newArrayOfExpenses = expenses.filter(({ id }) => id !== idToDelete);
+    const { ask } = expenses
+      .find(({ id }) => id === idToDelete).exchangeRates[currency];
+    const total = Number(ask) * Number(value);
+    deleteExpense(newArrayOfExpenses);
     const { totalField } = this.state;
-    this.setState({ totalField: totalField + sum });
+    this.setState({ totalField: totalField - total });
   }
 
   render() {
@@ -34,7 +48,7 @@ class Wallet extends React.Component {
           <h2 data-testid="total-field">{ totalField.toFixed(2) }</h2>
         </header>
         <ExpenseForm sumFunction={ this.totalSum } />
-        <ExpenseTable />
+        <ExpenseTable deletFunc={ this.deletExpense } />
       </section>
 
     );
@@ -44,6 +58,8 @@ class Wallet extends React.Component {
 Wallet.propTypes = {
   email: PropTypes.string.isRequired,
   saveCurrencies: PropTypes.func.isRequired,
+  expenses: PropTypes.arrayOf().isRequired,
+  deleteExpense: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -53,6 +69,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   saveCurrencies: () => dispatch(fetchCurrencies()),
+  deleteExpense: (expenses) => dispatch(actionDeleteExpense(expenses)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Wallet);
