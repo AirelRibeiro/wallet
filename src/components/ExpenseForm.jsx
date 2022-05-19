@@ -20,16 +20,13 @@ class ExpenseForm extends React.Component {
     });
   }
 
-  save = async (moeda) => {
+  save = async () => {
     const expense = this.state;
     const { expenses, saveExpense, sumFunction } = this.props;
     const quoteData = await apiRequest();
-    const data = Object.entries(quoteData);
-    const cotacao = data.find((coin) => coin[0] === moeda);
-    const amount = { ...expense, cotacao: cotacao[1].ask };
     const id = expenses.length;
     saveExpense({ id, ...expense, exchangeRates: quoteData });
-    sumFunction([amount]);
+    sumFunction([...expenses, { id, ...expense, exchangeRates: quoteData }]);
     this.setState({ value: '' });
   }
 
@@ -99,7 +96,7 @@ class ExpenseForm extends React.Component {
         </label>
         <button
           type="button"
-          onClick={ () => this.save(currency) }
+          onClick={ this.save }
         >
           Adicionar despesa
 

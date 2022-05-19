@@ -4,7 +4,7 @@ import propTypes from 'prop-types';
 
 class ExpenseTable extends React.Component {
   render() {
-    const { expenses } = this.props;
+    const { expenses, deletFunc } = this.props;
     return (
       <table>
         <tr>
@@ -34,7 +34,14 @@ class ExpenseTable extends React.Component {
               <td>Real</td>
               <td>
                 <button type="button">Editar</button>
-                <button type="button">Excluir</button>
+                <button
+                  type="button"
+                  data-testid="delete-btn"
+                  onClick={ () => deletFunc(id, currency, value) }
+                >
+                  Excluir
+
+                </button>
               </td>
             </tr>
           ))}
@@ -46,6 +53,7 @@ class ExpenseTable extends React.Component {
 
 ExpenseTable.propTypes = {
   expenses: propTypes.arrayOf(),
+  deletFunc: propTypes.func.isRequired,
 };
 
 ExpenseTable.defaultProps = {
