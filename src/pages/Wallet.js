@@ -22,7 +22,6 @@ class Wallet extends React.Component {
         Number(exchangeRates[currency].ask)));
     const sum = convertedArray.length === 0
       ? 0 : convertedArray.reduce((acc, curr) => acc + curr);
-    // const sum = convertedArray.reduce((acc, curr) => acc + curr);
     this.setState({ totalField: sum });
   }
 
@@ -58,7 +57,7 @@ class Wallet extends React.Component {
 Wallet.propTypes = {
   email: PropTypes.string.isRequired,
   saveCurrencies: PropTypes.func.isRequired,
-  expenses: PropTypes.arrayOf().isRequired,
+  expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
   deleteExpense: PropTypes.func.isRequired,
 };
 
