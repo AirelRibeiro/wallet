@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { actionLogin } from '../actions';
+import '../style/Login.css';
 
 class Login extends React.Component {
   state = {
