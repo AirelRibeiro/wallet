@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { actionSaveExpense, actionSaveExpenseAfterEditing } from '../actions';
 import apiRequest from '../apiRequest';
+import '../style/ExpenseForm.css';
 
 class ExpenseForm extends React.Component {
   state = {
