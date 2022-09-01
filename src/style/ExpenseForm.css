@@ -12,6 +12,7 @@
 }
 
 .expense_form input {
+  border: none;
   border-radius: 2vh;
   font-size: 1em;
   height: 2rem;
@@ -23,6 +24,7 @@
 }
 
 .expense_form select {
+  border: none;
   border-radius: 2vh;
   font-size: 1em;
   height: 2rem;
@@ -35,6 +37,7 @@
 
 .expense_form button {
   background-color: rgb(250, 235, 255);
+  border: none;
   border-radius: 1vh;
   color: #5E4652;
   font-family: 'DM Serif Display', serif;
