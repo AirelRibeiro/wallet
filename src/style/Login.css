@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+body {
+  background-color: #6d4997;
+}
+
+.login_page {
+  display: flex;
+  height: 60vh;
+  justify-content: center;
+  margin: auto;
+  width: 60vw;
+}
+
+.login_title {
+  color: #f1b0d1;
+  font-family: 'DM Serif Display', serif;
+  font-size: 8em;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.login_page img {
+  align-self: center;
+}
+
+.login_form {
+  background-color: #ffdef650;
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 40vh;
+  margin: auto;
+  /* margin-top: 25vh; */
+  padding: 2em;
+  width: 20vw;
+}
+
+.login_form label {
+  display: none;
+}
+
+.login_form input {
+  border-radius: 10px;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5em;
+  height: 2em;
+  text-align: center;
+}
+
+.login_form button {
+  background-color: #f1b0d1;
+  border-radius: 10px;
+  color: #3D0A1D;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5em;
+  height: 2em;
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+}
