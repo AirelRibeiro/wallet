@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+.wallet header {
+  align-items: center;
+  background-color: rgb(250, 235, 255);
+  border-bottom: #FFC7FF 1px solid;
+  color: #5E4652;
+  display: flex;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5em;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  justify-content: start;
+  width: 15vw;
+}
+
+.left img {
+  height: 10vh;
+  margin-left: 1vw;
+}
+
+.left h2 {
+  align-self: center;
+  margin-left: 2vw;
+}
+
+.email {
+  margin-right: 1vw;
+}
