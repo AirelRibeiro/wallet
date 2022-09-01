@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { actionLogin } from '../actions';
 import '../style/Login.css';
+import wallet from '../images/wallet.png';
 
 class Login extends React.Component {
   state = {
