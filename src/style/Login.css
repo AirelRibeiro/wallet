@@ -43,7 +43,6 @@ body {
 .login_form input {
   border-radius: 10px;
   font-family: 'DM Serif Display', serif;
-  /* font-size: 1.5em; */
   height: 2em;
   text-align: center;
 }
@@ -53,7 +52,6 @@ body {
   border-radius: 10px;
   color: #3D0A1D;
   font-family: 'DM Serif Display', serif;
-  /* font-size: 1.5em; */
   height: 2em;
   margin: 0 auto;
   text-align: center;
