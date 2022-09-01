@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import { actionEditExpense } from '../actions';
+import '../style/ExpenseTable.css';
 
 class ExpenseTable extends React.Component {
   editExpense = (id) => {

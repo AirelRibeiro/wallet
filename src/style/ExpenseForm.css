@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+.expense_form {
+  align-items: center;
+  color: #FDFDFD;
+  display: flex;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5em;
+  height: 8vh;
+  justify-content: space-evenly;
+  margin-top: 2vh;
+}
+
+.expense_form input {
+  border-radius: 2vh;
+  font-size: 1em;
+  height: 2rem;
+  text-align: center;
+}
+
+.expense_form :first-of-type input {
+  width: 5vw;
+}
+
+.expense_form select {
+  border-radius: 2vh;
+  font-size: 1em;
+  height: 2rem;
+  text-align: center;
+}
+
+.expense_form :nth-child(3) select {
+  width: 15vw;
+}
+
+.expense_form button {
+  background-color: rgb(250, 235, 255);
+  border-radius: 1vh;
+  color: #5E4652;
+  font-family: 'DM Serif Display', serif;
+  font-size: 1em;
+  font-weight: 900;
+  padding: 1vh;
+  text-align: center;
+}

@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { fetchCurrencies, actionDeleteExpense } from '../actions';
 import ExpenseForm from '../components/ExpenseForm';
 import ExpenseTable from '../components/ExpenseTable';
+import '../style/Wallet.css';
+import coins from '../images/coins.png';
 
 class Wallet extends React.Component {
   state = {
@@ -40,11 +42,14 @@ class Wallet extends React.Component {
     const { email } = this.props;
     const { totalField } = this.state;
     return (
-      <section>
+      <section className="wallet">
         <header>
-          <h1 data-testid="email-field">{ email }</h1>
-          <h3 data-testid="header-currency-field">BRL</h3>
-          <h2 data-testid="total-field">{ totalField.toFixed(2) }</h2>
+          <div className="left">
+            <img src={ coins } alt="wallet" />
+            <h2 data-testid="total-field">{ totalField.toFixed(2) }</h2>
+          </div>
+          <h1 data-testid="header-currency-field">Moeda - BRL</h1>
+          <h1 data-testid="email-field" className="email">{`Usuário - ${email}`}</h1>
         </header>
         <ExpenseForm sumFunction={ this.totalSum } />
         <ExpenseTable deletFunc={ this.deletExpense } />

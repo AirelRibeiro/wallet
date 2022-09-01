@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { actionSaveExpense, actionSaveExpenseAfterEditing } from '../actions';
 import apiRequest from '../apiRequest';
+import '../style/ExpenseForm.css';
 
 class ExpenseForm extends React.Component {
   state = {
@@ -47,7 +48,7 @@ class ExpenseForm extends React.Component {
     const { coins, editing } = this.props;
     const { value, currency, method, tag, description } = this.state;
     return (
-      <form>
+      <form className="expense_form">
         <label htmlFor="valor">
           Valor:
           {' '}
@@ -72,7 +73,7 @@ class ExpenseForm extends React.Component {
           </select>
         </label>
         <label htmlFor="method">
-          Metodo de pagamento:
+          Método de pagamento:
           {' '}
           <select
             id="method"
