@@ -45,6 +45,7 @@ class Login extends React.Component {
     const { email, password, loginDone, validFields } = this.state;
     return (
         <h1 className="login_title">AirWallet</h1>
+        <div className="login_page">
           <input
             data-testid="email-input"
             type="email"
@@ -73,6 +74,10 @@ class Login extends React.Component {
         </button>
         { loginDone && <Redirect to="/carteira" /> }
       </form>
+
+        </div>
+
+      </>
     );
   }
 }
