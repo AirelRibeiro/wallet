@@ -73,7 +73,7 @@ class ExpenseForm extends React.Component {
           </select>
         </label>
         <label htmlFor="method">
-          Metodo de pagamento:
+          Método de pagamento:
           {' '}
           <select
             id="method"
