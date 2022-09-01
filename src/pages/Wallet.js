@@ -42,11 +42,12 @@ class Wallet extends React.Component {
     const { email } = this.props;
     const { totalField } = this.state;
     return (
-      <section>
+      <section className="wallet">
         <header>
-          <h1 data-testid="email-field">{ email }</h1>
+          <div className="left">
             <img src={ coins } alt="wallet" />
           <h2 data-testid="total-field">{ totalField.toFixed(2) }</h2>
+          <h1 data-testid="email-field" className="email">{`Usuário - ${email}`}</h1>
         </header>
         <ExpenseForm sumFunction={ this.totalSum } />
         <ExpenseTable deletFunc={ this.deletExpense } />
