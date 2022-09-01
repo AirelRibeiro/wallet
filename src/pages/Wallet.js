@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { fetchCurrencies, actionDeleteExpense } from '../actions';
 import ExpenseForm from '../components/ExpenseForm';
 import ExpenseTable from '../components/ExpenseTable';
+import '../style/Wallet.css';
 
 class Wallet extends React.Component {
   state = {
