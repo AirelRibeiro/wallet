@@ -24,7 +24,7 @@
 
 .expense_form select {
   border-radius: 2vh;
-  font-size: 1em;
+  /* font-size: 1em; */
   height: 2rem;
   text-align: center;
 }
@@ -38,7 +38,7 @@
   border-radius: 1vh;
   color: #5E4652;
   font-family: 'DM Serif Display', serif;
-  font-size: 1em;
+  /* font-size: 1em; */
   font-weight: 900;
   padding: 1vh;
   text-align: center;

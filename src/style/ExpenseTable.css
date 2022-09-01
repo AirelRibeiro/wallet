@@ -13,21 +13,21 @@ th {
   background-color: rgb(250, 235, 255);
   border: 1px solid #5E4652;
   color: #5E4652;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   padding: 1vh 0;
 }
 
 td {
   border: 1px solid #FFC7FF;
   color: #ffffff;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   padding: 1vh 0;
 }
 
 td button {
   border-radius: 10%;
   color: #5E4652;
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
   font-weight: 900;
   margin: 0.5vw;
   padding: 0.5vh;
