@@ -48,7 +48,7 @@ class ExpenseForm extends React.Component {
     const { coins, editing } = this.props;
     const { value, currency, method, tag, description } = this.state;
     return (
-      <form>
+      <form className="expense_form">
         <label htmlFor="valor">
           Valor:
           {' '}
