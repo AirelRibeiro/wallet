@@ -5,6 +5,7 @@ import { fetchCurrencies, actionDeleteExpense } from '../actions';
 import ExpenseForm from '../components/ExpenseForm';
 import ExpenseTable from '../components/ExpenseTable';
 import '../style/Wallet.css';
+import coins from '../images/coins.png';
 
 class Wallet extends React.Component {
   state = {
@@ -44,7 +45,7 @@ class Wallet extends React.Component {
       <section>
         <header>
           <h1 data-testid="email-field">{ email }</h1>
-          <h3 data-testid="header-currency-field">BRL</h3>
+            <img src={ coins } alt="wallet" />
           <h2 data-testid="total-field">{ totalField.toFixed(2) }</h2>
         </header>
         <ExpenseForm sumFunction={ this.totalSum } />
