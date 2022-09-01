@@ -34,6 +34,9 @@
 .expense_form :nth-child(3) select {
   width: 15vw;
 }
+.expense_form :nth-child(4) select {
+  width: 10vw;
+}
 
 .expense_form button {
   background-color: rgb(250, 235, 255);
