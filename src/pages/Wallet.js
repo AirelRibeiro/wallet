@@ -46,7 +46,9 @@ class Wallet extends React.Component {
         <header>
           <div className="left">
             <img src={ coins } alt="wallet" />
-          <h2 data-testid="total-field">{ totalField.toFixed(2) }</h2>
+            <h2 data-testid="total-field">{ totalField.toFixed(2) }</h2>
+          </div>
+          <h1 data-testid="header-currency-field">Moeda - BRL</h1>
           <h1 data-testid="email-field" className="email">{`Usuário - ${email}`}</h1>
         </header>
         <ExpenseForm sumFunction={ this.totalSum } />
