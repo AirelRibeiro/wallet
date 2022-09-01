@@ -44,10 +44,7 @@ class Login extends React.Component {
   render() {
     const { email, password, loginDone, validFields } = this.state;
     return (
-      <form>
-        <label htmlFor="email">
-          Email:
-          {' '}
+        <h1 className="login_title">AirWallet</h1>
           <input
             data-testid="email-input"
             type="email"
